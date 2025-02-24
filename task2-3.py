@@ -19,57 +19,57 @@ T = N * dt        # Define the total duration of the data
 # Convert EEG data to pandas Series
 eeg_series = pd.Series(EEG)
 
-# # Line plot
-# plt.figure(figsize=(12, 6))
-# plt.plot(t, EEG)
-# plt.title('EEG Signal Over Time')
-# plt.xlabel('Time [s]')
-# plt.ylabel('Voltage [$\mu$ V]')
-# plt.autoscale(tight=True)
-# # plt.show()
+# Line plot
+plt.figure(figsize=(12, 6))
+plt.plot(t, EEG)
+plt.title('EEG Signal Over Time')
+plt.xlabel('Time [s]')
+plt.ylabel('Voltage [$\mu$ V]')
+plt.autoscale(tight=True)
+# plt.show()
 
-# # Histogram
-# plt.figure(figsize=(12, 6))
-# plt.hist(eeg_series, bins=30, density=True, alpha=0.6, color='g')
-# plt.title('Histogram of EEG Signal')
-# plt.xlabel('Voltage [$\mu$ V]')
-# plt.ylabel('Frequency')
-# # plt.show()
+# Histogram
+plt.figure(figsize=(12, 6))
+plt.hist(eeg_series, bins=30, density=True, alpha=0.6, color='g')
+plt.title('Histogram of EEG Signal')
+plt.xlabel('Voltage [$\mu$ V]')
+plt.ylabel('Frequency')
+# plt.show()
 
-# # Density plot
-# plt.figure(figsize=(12, 6))
-# sns.kdeplot(eeg_series, shade=True)
-# plt.title('Density Plot of EEG Signal')
-# plt.xlabel('Voltage [$\mu$ V]')
-# plt.ylabel('Density')
-# # plt.show()
+# Density plot
+plt.figure(figsize=(12, 6))
+sns.kdeplot(eeg_series, shade=True)
+plt.title('Density Plot of EEG Signal')
+plt.xlabel('Voltage [$\mu$ V]')
+plt.ylabel('Density')
+# plt.show()
 
-# # Box plot
-# plt.figure(figsize=(12, 6))
-# sns.boxplot(x=eeg_series)
-# plt.title('Box Plot of EEG Signal')
-# plt.xlabel('Voltage [$\mu$ V]')
-# # plt.show()
+# Box plot
+plt.figure(figsize=(12, 6))
+sns.boxplot(x=eeg_series)
+plt.title('Box Plot of EEG Signal')
+plt.xlabel('Voltage [$\mu$ V]')
+# plt.show()
 
-# # Lag-1 plot
-# plt.figure(figsize=(12, 6))
-# plt.scatter(eeg_series[:-1], eeg_series[1:])
-# plt.title('Lag-1 Plot of EEG Signal')
-# plt.xlabel('EEG Signal (t)')
-# plt.ylabel('EEG Signal (t+1)')
-# # plt.show()
+# Lag-1 plot
+plt.figure(figsize=(12, 6))
+plt.scatter(eeg_series[:-1], eeg_series[1:])
+plt.title('Lag-1 Plot of EEG Signal')
+plt.xlabel('EEG Signal (t)')
+plt.ylabel('EEG Signal (t+1)')
+# plt.show()
 
-# # ACF plot
-# plt.figure(figsize=(12, 6))
-# plot_acf(eeg_series, lags=50)
-# plt.title('ACF Plot of EEG Signal')
-# # plt.show()
+# ACF plot
+plt.figure(figsize=(12, 6))
+plot_acf(eeg_series, lags=50)
+plt.title('ACF Plot of EEG Signal')
+# plt.show()
 
-# # PACF plot
-# plt.figure(figsize=(12, 6))
-# plot_pacf(eeg_series, lags=50)
-# plt.title('PACF Plot of EEG Signal')
-# # plt.show()
+# PACF plot
+plt.figure(figsize=(12, 6))
+plot_pacf(eeg_series, lags=50)
+plt.title('PACF Plot of EEG Signal')
+# plt.show()
 
 
 mn = EEG.mean()  # Compute the mean of the data
@@ -117,7 +117,8 @@ plt.show()
 # Plot the power spectrum in log (dB) scale
 plt.figure(figsize=(12, 6))
 plt.plot(faxis, 20 * np.log10(Sxx))
-plt.xlim([0, 100])
+plt.xlim([0, 70])
+plt.ylim([-120, 10])
 plt.title('Power Spectrum of EEG Signal (Log Scale)')
 plt.xlabel('Frequency [Hz]')
 plt.ylabel('Power [dB]')
