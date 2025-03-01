@@ -32,7 +32,9 @@ plt.title("Line Plot of White Noise Series")
 plt.xlabel("Time")
 plt.ylabel("Value")
 plt.legend()
+plt.savefig('1-1-line plot.png', dpi=500)
 plt.show()
+
 
 # 2. Histogram
 plt.figure(figsize=(12, 6))
@@ -41,6 +43,7 @@ plt.title("Histogram of White Noise Series")
 plt.xlabel("Value")
 plt.ylabel("Frequency")
 plt.legend()
+plt.savefig('1-1-histogram.png', dpi=500)
 plt.show()
 
 # 3. Density Plot
@@ -50,12 +53,14 @@ plt.title("Density Plot of White Noise Series")
 plt.xlabel("Value")
 plt.ylabel("Density")
 plt.legend()
+plt.savefig('1-1-Density plot.png', dpi=500)
 plt.show()
 
 # 4. Box Plot
 plt.figure(figsize=(8, 6))
 series.plot(kind='box', vert=False)
 plt.title("Box Plot of White Noise Series")
+plt.savefig('1-1-box plot.png', dpi=500)
 plt.show()
 
 # 5. Lag-1 Plot
@@ -64,23 +69,27 @@ pd.plotting.lag_plot(series, lag=1)
 plt.title("Lag-1 Plot of White Noise Series")
 plt.xlabel("Series(t)")
 plt.ylabel("Series(t+1)")
+plt.savefig('1-1-lag1 plot.png', dpi=500)
 plt.show()
 
 # 6. ACF Plot
 plt.figure(figsize=(12, 6))
 autocorrelation_plot(series)
 plt.title("ACF Plot of White Noise Series")
+plt.savefig('1-1-ACF plot.png', dpi=500)
 plt.show()
 
 # 7. ACF and PACF Plots (up to 40 lags)
 plt.figure(figsize=(12, 6))
 plot_acf(series, lags=40)
 plt.title("ACF Plot (up to 40 lags)")
+plt.savefig('1-1-ACF Plot (up to 40 lags).png', dpi=500)
 plt.show()
 
 plt.figure(figsize=(12, 6))
 plot_pacf(series, lags=40)
 plt.title("PACF Plot (up to 40 lags)")
+plt.savefig('1-1-PACF Plot (up to 40 lags).png', dpi=500)
 plt.show()
 
 # Generate 100 random series
@@ -93,6 +102,73 @@ random_series_list = [Series(series) for series in random_series_list]
 average_series = pd.concat(random_series_list, axis=1).mean(axis=1)
 print("\nSummary Statistics of Average Series:")
 print(average_series.describe())
+
+# 1. Line Chart
+plt.figure(figsize=(12, 6))
+plt.plot(series, label="Average Value Series")
+plt.title("Line Plot of Average Value Series")
+plt.xlabel("Time")
+plt.ylabel("Value")
+plt.legend()
+plt.savefig('1-1-Average Value Series-line plot.png', dpi=500)
+plt.show()
+
+# 2. Histogram
+plt.figure(figsize=(12, 6))
+average_series.hist(bins=30, density=True, alpha=0.6, color='g', label='Histogram')
+plt.title("Histogram of Average Value Series")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+plt.legend()
+plt.savefig('1-1-Average Value Series-histogram.png', dpi=500)
+plt.show()
+
+# 3. Density Plot
+plt.figure(figsize=(12, 6))
+average_series.plot(kind='kde', color='r', label='Density Plot')
+plt.title("Density Plot of Average Value Series")
+plt.xlabel("Value")
+plt.ylabel("Density")
+plt.legend()
+plt.savefig('1-1-Average Value Series-Density plot.png', dpi=500)
+plt.show()
+
+# 4. Box Plot
+plt.figure(figsize=(8, 6))
+average_series.plot(kind='box', vert=False)
+plt.title("Box Plot of Average Value Series")
+plt.savefig('1-1-Average Value Series-box plot.png', dpi=500)
+plt.show()
+
+# 5. Lag-1 Plot
+plt.figure(figsize=(8, 6))
+pd.plotting.lag_plot(average_series, lag=1)
+plt.title("Lag-1 Plot of Average Value Series")
+plt.xlabel("Series(t)")
+plt.ylabel("Series(t+1)")
+plt.savefig('1-1-Average Value Series-lag1 plot.png', dpi=500)
+plt.show()
+
+# 6. ACF Plot
+plt.figure(figsize=(12, 6))
+autocorrelation_plot(average_series)
+plt.title("ACF Plot of Average Value Series")
+plt.savefig('1-1-Average Value Series-ACF plot.png', dpi=500)
+plt.show()
+
+# 7. ACF and PACF Plots (up to 40 lags)
+plt.figure(figsize=(12, 6))
+plot_acf(average_series, lags=40)
+plt.title("ACF Plot (up to 40 lags)")
+plt.savefig('1-1-Average Value Series-ACF Plot (up to 40 lags).png', dpi=500)
+plt.show()
+
+plt.figure(figsize=(12, 6))
+plot_pacf(series, lags=40)
+plt.title(  "PACF Plot (up to 40 lags)")
+plt.savefig('1-1-Average Value Series-PACF Plot (up to 40 lags).png', dpi=500)
+plt.show()
+
 
 # Perform Ljung-Box test
 ljung_box_test = acorr_ljungbox(series, lags=[40], return_df=True)
