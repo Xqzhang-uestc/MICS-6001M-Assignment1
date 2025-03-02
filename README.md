@@ -12,7 +12,7 @@ The project is organized into the following files:
 - `task2-1.py`: Analysis of sequential sine wave signals.
 - `task2-2.py`: Analysis of ERP conditions.
 - `task2-3.py`: Analysis of EEG signal data.
-- `task2-3-discussion.py`: Validate manual calculations, and draw the ACF graph for the time series..
+- `task2-3-discussion.py`: Validate manual calculations, and draw the ACF graph for the time series.
 - `requirements.txt`: List of dependencies required to run the project.
 - `README.md`: This file, providing an overview and instructions.
 
