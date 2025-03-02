@@ -31,6 +31,7 @@ plt.title('Sequential Sine Wave Signals')
 plt.xlabel('Time [s]')
 plt.ylabel('Amplitude')
 plt.grid(True)
+plt.savefig('pics/2-1-line plot.png', dpi=500)
 plt.show()
 
 # Power spectrum (power density graph)
