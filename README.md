@@ -12,6 +12,7 @@ The project is organized into the following files:
 - `task2-1.py`: Analysis of sequential sine wave signals.
 - `task2-2.py`: Analysis of ERP conditions.
 - `task2-3.py`: Analysis of EEG signal data.
+- `task2-3-discussion.py`: Validate manual calculations, and draw the ACF graph for the time series..
 - `requirements.txt`: List of dependencies required to run the project.
 - `README.md`: This file, providing an overview and instructions.
 
@@ -42,7 +43,7 @@ python task1-3.py
 python task2-1.py
 python task2-2.py
 python task2-3.py
-
+python task2-3-discussion.py
 ## Obtaining the Results
 
 Each script will generate and save various plots in the `pics` directory. The plots are saved with descriptive filenames, making it easy to identify the content of each plot. For example:
