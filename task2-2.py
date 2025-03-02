@@ -19,8 +19,9 @@ plot(t, a_mn, 'k', lw=3)                          # Plot the ERP of condition A,
 plot(t, a_mn + 2 * a_sdmn, 'k:', lw=1)              # ... and include the upper CI,
 plot(t, a_mn - 2 * a_sdmn, 'k:', lw=1)              # ... and the lower CI.
 xlabel('Time [s]')                              # Label the axes,
-ylabel('Voltage [$\mu$ V]')
+ylabel(r'Voltage [$\mu$ V]')
 title('ERP of condition A')                     # ... provide a useful title,
+plt.savefig('pics/2-2-ERP of condition A.png', dpi=500)
 show()                                          # ... and show the plot.
 
 b_mn = EEGb.mean(0)                               # Compute the mean signal across trials (the ERP).
@@ -31,8 +32,9 @@ plot(t, b_mn, 'b', lw=3)                          # Plot the ERP of condition B,
 plot(t, b_mn + 2 * b_sdmn, 'b:', lw=1)              # ... and include the upper CI,
 plot(t, b_mn - 2 * b_sdmn, 'b:', lw=1)              # ... and the lower CI.
 xlabel('Time [s]')                              # Label the axes,
-ylabel('Voltage [$\mu$ V]')
+ylabel(r'Voltage [$\mu$ V]')
 title('ERP of condition B')                     # ... provide a useful title,
+plt.savefig('pics/2-2-ERP of condition B.png', dpi=500)
 show()                                          # ... and show the plot.
 
 # Compute the FFT of the mean signal for condition A
@@ -45,6 +47,7 @@ xf = fftfreq(N, T)[:N//2]
 plt.figure(figsize=(12, 6))
 plt.plot(xf, 2.0/N * np.abs(yf[:N//2]))
 plt.title('Frequency Spectrum of Condition A')
+plt.savefig('pics/2-2-Frequency Spectrum of Condition A.png', dpi=500)
 plt.xlabel('Frequency [Hz]')
 plt.ylabel('Amplitude')
 plt.grid()
