@@ -28,13 +28,13 @@ print(f"Standard Deviation: {std_dev}")
 plt.figure(figsize=(12, 6))
 plt.plot(random_walk)
 plt.title('Random Walk Line Plot')
-plt.savefig('1-2-line_plot.png', dpi=500)
+plt.savefig('pics/1-2-line_plot.png', dpi=500)
 
 # Histogram
 plt.figure(figsize=(12, 6))
 plt.hist(random_walk, bins=30, density=True, alpha=0.6, color='g')
 plt.title('Histogram')
-plt.savefig('1-2-histogram.png', dpi=500)
+plt.savefig('pics/1-2-histogram.png', dpi=500)
 
 # Density plot
 plt.figure(figsize=(12, 6))
@@ -42,31 +42,31 @@ density, bins, _ = plt.hist(random_walk, bins=30, density=True, alpha=0.0)
 count, _ = np.histogram(random_walk, bins)
 plt.plot(bins[1:], density)
 plt.title('Density Plot')
-plt.savefig('1-2-density_plot.png', dpi=500)
+plt.savefig('pics/1-2-density_plot.png', dpi=500)
 
 # Box plot
 plt.figure(figsize=(12, 6))
 plt.boxplot(random_walk, vert=False)
 plt.title('Box Plot')
-plt.savefig('1-2-box_plot.png', dpi=500)
+plt.savefig('pics/1-2-box_plot.png', dpi=500)
 
 # Lag-1 plot
 plt.figure(figsize=(12, 6))
 plt.scatter(random_walk[:-1], random_walk[1:])
 plt.title('Lag-1 Plot')
-plt.savefig('1-2-lag1_plot.png', dpi=500)
+plt.savefig('pics/1-2-lag1_plot.png', dpi=500)
 
 
 # ACF and PACF plots
 plt.figure(figsize=(12, 6))
 plot_acf(random_walk, lags=40, ax=plt.gca())
 plt.title('ACF Plot')
-plt.savefig('1-2-acf_plot.png', dpi=500)
+plt.savefig('pics/1-2-acf_plot.png', dpi=500)
 
 plt.figure(figsize=(12, 6))
 plot_pacf(random_walk, lags=40, ax=plt.gca())
 plt.title('PACF Plot')
-plt.savefig('1-2-pacf_plot.png', dpi=500)
+plt.savefig('pics/1-2-pacf_plot.png', dpi=500)
 
 
 
